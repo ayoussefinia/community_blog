@@ -23,7 +23,7 @@ if (process.env.NODE_ENV === "production") {
 }
 
 // Connect to the Mongo DB
-mongoose.connect("mongodb+srv://ayoussefinia:"+process.env.pass+"@cluster0.uescv.mongodb.net/myFirstDatabase?retryWrites=true&w=majority").then(() => {
+mongoose.connect("mongodb+srv://ayoussefinia:"+process.env.pass+"@cluster0.uescv.mongodb.net/Blog?retryWrites=true&w=majority").then(() => {
   console.log('mongodb connected')
 })
 
