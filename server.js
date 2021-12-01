@@ -13,10 +13,7 @@ const PORT = process.env.PORT || 3001;
 
 console.log('***********++++++***************');
 
-// Connect to the Mongo DB
-mongoose.connect("mongodb+srv://ayoussefinia:"+process.env.pass+"@cluster0.uescv.mongodb.net/Blog?retryWrites=true&w=majority").then(() => {
-  console.log('mongodb connected')
-});
+
 
 // allow for data transfer via url, and use of req.body json
 app.use(
@@ -30,10 +27,10 @@ if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
 
-// // Connect to the Mongo DB
-// mongoose.connect("mongodb+srv://ayoussefinia:"+process.env.pass+"@cluster0.uescv.mongodb.net/Blog?retryWrites=true&w=majority").then(() => {
-//   console.log('mongodb connected')
-// })
+// Connect to the Mongo DB
+mongoose.connect("mongodb+srv://ayoussefinia:"+process.env.pass+"@cluster0.uescv.mongodb.net/Blog?retryWrites=true&w=majority").then(() => {
+  console.log('mongodb connected')
+})
 
 
 // Passport middleware for authenticating requests
