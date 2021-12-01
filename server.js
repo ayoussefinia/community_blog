@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const passport = require("passport");
 const routes = require("./routes");
-
+const MONGODB_URI = require("./config/keys").mongoURI;
 
 const users = require("./routes/api/users");
 
@@ -23,7 +23,7 @@ if (process.env.NODE_ENV === "production") {
 }
 
 // Connect to the Mongo DB
-mongoose.connect("mongodb+srv://ayoussefinia:"+process.env.pass+"@cluster0.uescv.mongodb.net/myFirstDatabase?retryWrites=true&w=majority").then(() => {
+mongoose.connect(MONGODB_URI || "mongodb://localhost/communityblog").then(() => {
   console.log('mongodb connected')
 })
 
