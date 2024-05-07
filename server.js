@@ -27,11 +27,7 @@ if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
 
-// Connect to the Mongo DB
-mongoose.connect("mongodb+srv://ayoussefinia:"+process.env.pass+"@cluster0.uescv.mongodb.net/Blog?retryWrites=true&w=majority").then(() => {
-  console.log('mongodb connected')
-})
-
+mongoose.connect("mongodb+srv://ayoussefinia:"+process.env.pass+"@cluster0.snkzbmi.mongodb.net/Blog?retryWrites=true&w=majority").then(() => {console.log('mongodb connected')})
 
 // Passport middleware for authenticating requests
 app.use(passport.initialize());

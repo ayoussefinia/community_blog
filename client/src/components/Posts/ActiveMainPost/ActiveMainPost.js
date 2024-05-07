@@ -104,9 +104,12 @@ render() {
             } else if (el.type === 'image') {
                 return(
                     <div className={classes.imageDiv} key={index}>
-                         <img src={this.props.body[index].value} alt="" className={classes.image}/>
-                         <br/>
-                         <br/>
+                        <img 
+                        src={this.props.body[index].value} 
+                        alt="" className={classes.image} 
+                        style={{maxWidth: '100%'}}/>
+                        <br/>
+                        <br/>
                     </div>
                 )
             }
